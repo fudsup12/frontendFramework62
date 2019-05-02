@@ -10,6 +10,7 @@ import { BackendService } from "../backend.service";
 })
 export class RegisterComponent implements OnInit {
   registerForm: FormGroup;
+  submitting: Boolean = false;
   constructor(
     private formBuilder: FormBuilder,
     private router: Router,
@@ -38,7 +39,7 @@ export class RegisterComponent implements OnInit {
   onSubmit() {
     // เมื่อเรากดปุ่ม register ให้มาที่ ฟังก์ชั่นนี้
     console.log(this.f.rank.value);
-
+    this.submitting = true;
     if (!this.registerForm.invalid) {
       this.backendService
         .register(
@@ -52,12 +53,18 @@ export class RegisterComponent implements OnInit {
         )
         .subscribe(data => {
           if (data) {
-            alert("Register success!");
-            this.router.navigate(["/home"]);
+            if (data.status == true) {
+              alert("Register success!");
+              this.router.navigate(["/home"]);
+            } else {
+              alert(data.message);
+            }
           }
+          this.submitting = false;
         });
     } else {
       alert("Invalid!"); // show mesage กรณีกรอกข้อมูลไม่ครบใน input
+      this.submitting = false;
     }
   }
 }

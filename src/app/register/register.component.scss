@@ -1,6 +1,6 @@
 /* Made with love by Mutiullah Samim*/
 
-@import url('https://fonts.googleapis.com/css?family=Numans');
+@import url("https://fonts.googleapis.com/css?family=Numans");
 
 html,
 body {
@@ -8,7 +8,7 @@ body {
   //   background-size: cover;
   //   background-repeat: no-repeat;
   height: 100%;
-  font-family: 'Numans', sans-serif;
+  font-family: "Numans", sans-serif;
 }
 
 .logo-container {
@@ -25,7 +25,7 @@ body {
 .container-fluid {
   //   height: 100%;
   //   background-image: url('http://getwallpapers.com/wallpaper/full/a/5/d/544750.jpg');
-  background-image: url('../../assets/classroom.jpg');
+  background-image: url("../../assets/classroom.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   align-content: center;
@@ -70,7 +70,6 @@ body {
 input:focus {
   outline: 0 0 0 0 !important;
   box-shadow: 0 0 0 0 !important;
-
 }
 
 .remember {
@@ -86,7 +85,7 @@ input:focus {
 
 .login_btn {
   color: black;
-  background-color: #FFC312;
+  background-color: #ffc312;
   width: 100px;
   cursor: pointer;
 }
@@ -102,4 +101,39 @@ input:focus {
 
 .links a {
   margin-left: 4px;
+}
+.lds-ring {
+  display: inline-block;
+  position: relative;
+  width: 64px;
+  height: 64px;
+}
+.lds-ring div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 51px;
+  height: 51px;
+  margin: 6px;
+  border: 6px solid #fff;
+  border-radius: 50%;
+  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: #fff transparent transparent transparent;
+}
+.lds-ring div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+.lds-ring div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+.lds-ring div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+@keyframes lds-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
